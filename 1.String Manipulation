@@ -1,0 +1,33 @@
+//3-1 Write a program that prompts for and reads the user's first and last name (separately).
+//Then print a string composed of the first letter of the user's first name, followed by
+//the first five characters of the user's last name, followed by a random number
+//in the range 10 to 99. Assume the last name is at least five letters long.
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main
+{
+    public static void main(String a[]){
+        
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+        
+        System.out.println("Enter FirstName");
+        String firstName = sc.nextLine();
+        System.out.println("Enter LastName");
+        String LastName = sc.nextLine();
+        
+        while(LastName.length()<5){
+            System.out.println("Atleast 5 letters required!Try again");
+            LastName = sc.nextLine();
+        }
+        
+        String Final = firstName.substring(0,1);
+        Final += LastName.substring(0,5);
+        Final += rand.nextInt(99);
+        
+        System.out.println(Final);
+        
+    }    
+}
